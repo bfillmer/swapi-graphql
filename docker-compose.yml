@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  web:
+    environment:
+      NODE_ENV: development
+    command: bash -c "yarn && yarn start"
+    image: graphql-swapi # the image used for the service
+    container_name: swapi-graphql
+    ports:
+      - 9000:9000 # app will be at 3001
+    volumes:
+      - ./:/usr/src # map our src directory to the volumes src working directory
